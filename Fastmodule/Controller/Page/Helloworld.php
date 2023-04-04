@@ -37,7 +37,7 @@ class Helloworld extends \Magento\Framework\App\Action\Action
         $productName=$product->getName();
         echo $productName; 
         echo"<hr>";
-        echo get_class($this->ProductRepository); // geting magento 2 class name  
+        echo get_class($this->ProductRepository); // getting magento 2 class name  
 
     }
 }
