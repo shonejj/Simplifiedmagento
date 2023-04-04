@@ -19,7 +19,7 @@ class Pluginsolution
     public function aroundsetName(\Magento\Catalog\Model\Product $subject ,callable $proceed,$result)
     {
     
-        echo $result;
+        echo $result . " name of the product before execution ";
         echo"<hr>";
        
         $this->proceed=$proceed($result);
