@@ -6,24 +6,30 @@ class Pluginsolution
 {
 
 
-    // public function beforesetname(\Magento\Catalog\Model\Product $subject , $result)
+    // public function beforesetName(\Magento\Catalog\Model\Product $subject , $result)
     // {
     //     return "before plugin". $result; 
     // }
 
-    // public function aftersetname(\Magento\Catalog\Model\Product $subject , $result)
+    // public function aftersetName(\Magento\Catalog\Model\Product $subject , $result)
     // {
     //     return "After plugin". $result; 
     // }
 
-    public function aroundsetname(\Magento\Catalog\Model\Product $subject ,callable $proceed, $result)
+    public function aroundsetName(\Magento\Catalog\Model\Product $subject ,callable $proceed,$result)
     {
-        return "before plugin". $result;
-        echo "<br>";
-        $this->proceed=$proceed;
-        return $result."after plugin";
-        echo "<br>";
-        return $result;
+    
+        echo $result;
+        echo"<hr>";
+       
+        $this->proceed=$proceed($result);
+
+        if($result =="iphone"){
+            $result="after proceed";
+            $this->proceed=$proceed($result);
+        }
+        
+
     }
 
 }
