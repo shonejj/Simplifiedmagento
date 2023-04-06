@@ -11,6 +11,5 @@
 
   <preference for="Magento\Catalog\Api\ProductRepositoryInterface" type="Simplifiedmagento\Fastmodule\Model\Customeimplementaion"/>
 
-
 </config>
 
